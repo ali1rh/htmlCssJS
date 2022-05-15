@@ -1,21 +1,40 @@
-// $("#tab-1").click(function (e) {
-//     $("#content-1").css({
-//         "opacity": "100%",
-//         "z-index": "100"
-//     })
-// });
 
-// $("#tab-2").click(function (e) {
-//     $("#content-2").css({
-//         "opacity": "1",
-//         "z-index": "100"
-//     })
-//     console.log('#tab-2');
-// });
-// $("#tab-3").click(function (e) {
-//     $("#content-3").css({
-//         "opacity": "1",
-//         "z-index": "100"
-//     })
-//     console.log('#tab-3');
-// });
+
+const uls = document.querySelectorAll("ul");
+
+uls.forEach((ul) => {
+  const resetClass = ul.parentNode.getAttribute("class");
+  const lis = ul.querySelectorAll("li");
+
+  lis.forEach((li) => {
+    li.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const target = e.currentTarget;
+
+      if (
+        target.classList.contains("active") ||
+        target.classList.contains("follow")
+      ) {
+        return;
+      }
+
+      ul.parentNode.setAttribute(
+        "class",
+        `${resetClass} ${target.getAttribute("data-where")}-style`
+      );
+
+      lis.forEach((item) => clearClass(item, "active"));
+
+      setClass(target, "active");
+    });
+  });
+});
+
+function clearClass(node, className) {
+  node.classList.remove(className);
+}
+
+function setClass(node, className) {
+  node.classList.add(className);
+}
