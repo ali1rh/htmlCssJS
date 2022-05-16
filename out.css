@@ -1,10 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
-/** 
-@chrisbautista @codespud
-animated tabs using css transitions only.
-I wanted to test how much we can accomplish with just CSS transitions. No keyframe animations at all.
-**/
 :root {
   --accent-color: #1fa8f5;
   --accent-color-fg: #fefefe;
@@ -16,6 +10,7 @@ I wanted to test how much we can accomplish with just CSS transitions. No keyfra
   --clay-box-shadow: rgba(7, 43, 74, 0.3);
   --clay-background-color: #c0d8ec;
   --clay-fg-color: #444;
+  --nav-color: #f9f8fa;
 }
 
 body {
@@ -63,7 +58,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #f9f8fa;
+  background-color: var(--nav-color);
   align-self: flex-end;
   justify-content: center;
   height: 50px;
@@ -73,50 +68,60 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  margin-right: 5px;
   transition: all 0.4s;
-  background-color: #f9f8fa;
+  background-color: var(--nav-color);
   position: relative;
   color: #888;
   cursor: pointer;
 }
 
 .tab-style1 li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 1px;
   left: 0;
   width: 60px;
   transition: top 0.2s ease-out, width 0.4s, border-radius 0.4s, box-shadow 0.4s;
 }
-.tab-style1 li.follow {
-  position: absolute;
-  border-radius: 100%;
-  width: 60px;
-  height: 60px;
-  border: 10px solid var(--app-content-background-color);
-  top: -3rem;
-  transition: left 0.2s ease-in, background-color 0.4s, border-color 0.4s;
-}
 .tab-style1 li:nth-child(1).active ~ .follow {
-  left: 12px;
+  left: 23px;
 }
 .tab-style1 li:nth-child(2).active ~ .follow {
-  left: 75px;
+  left: 84px;
 }
 .tab-style1 li:nth-child(3).active ~ .follow {
-  left: 140px;
+  left: 144px;
 }
 .tab-style1 li:nth-child(4).active ~ .follow {
   left: 205px;
 }
 .tab-style1 li:nth-child(5).active ~ .follow {
-  left: 270px;
+  left: 265px;
 }
-.tab-style1 .active {
+
+/**
+cssSelector isTRUE:
+    ul .active
+    .tab-style1 .active
+    ul .active
+    .containter . active
+**/
+ul .active {
   z-index: 100;
+  top: -2rem;
+  background-color: transparent;
+}
+
+.tab-style1 .follow {
+  position: absolute;
+  border-radius: 100%;
   width: 60px;
   height: 60px;
-  top: -2rem;
-  border-radius: 100%;
+  background-color: var(--nav-color);
+  border: 10px solid var(--app-content-background-color);
+  top: -3rem;
+  transition: left 0.2s ease-in, background-color 0.4s, border-color 0.4s;
 }
 
 .home.active {
