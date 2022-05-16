@@ -45,79 +45,7 @@ body {
     margin: 0 auto;
 }
 
-.home {
-    &.active {
-        color: var(--accent-color);
-    }
 
-    &-style {
-        --app-content-background-color: #c0d8ec;
-    }
-}
-
-.products {
-    &.active {
-        --outset-shadow: rgba(247, 167, 103, 0.45);
-        --inset-shadow: rgba(149, 62, 8, 0.45);
-        --clay-box-shadow: rgba(211, 69, 20, 0.4);
-        --clay-background-color: #d34514;
-        --clay-fg-color: #f1f2f3;
-
-        color: #690c0c;
-    }
-
-    &-style {
-        --app-content-background-color: #d36e5a;
-    }
-}
-
-.services {
-    &.active {
-        --outset-shadow: rgba(255, 159, 40, 0.45);
-        --inset-shadow: rgba(88, 54, 13, 0.45);
-        --clay-box-shadow: rgba(88, 54, 13, 0.4);
-        --clay-background-color: #ed9426;
-        --clay-fg-color: #f1f2f3;
-
-        color: #cf5c0f;
-    }
-
-    &-style {
-        --app-content-background-color: #ed9426;
-    }
-}
-
-.about {
-    &.active {
-        --outset-shadow: rgba(93, 255, 85, 0.45);
-        --inset-shadow: rgba(28, 78, 26, 0.45);
-        --clay-box-shadow: rgba(28, 78, 26, 0.4);
-        --clay-background-color: #4dd146;
-        --clay-fg-color: #f1f2f3;
-
-        color: #4dd146;
-    }
-
-    &-style {
-        --app-content-background-color: #4dd146;
-    }
-}
-
-.help {
-    &.active {
-        --outset-shadow: rgba(230, 230, 230, 0.45);
-        --inset-shadow: rgba(81, 81, 81, 0.45);
-        --clay-box-shadow: rgba(81, 81, 81, 0.4);
-        --clay-background-color: #a3a3a3;
-        --clay-fg-color: #f1f2f3;
-
-        color: #783896;
-    }
-
-    &-style {
-        --app-content-background-color: #a3a3a3;
-    }
-}
 
 .tabbar {
     background-color: var(--app-content-background-color);
@@ -169,10 +97,6 @@ body {
 }
 
 .tab-style1 {
-    ul {
-        justify-content: center;
-    }
-
     li {
         top: 1px;
         left: 0;
@@ -223,3 +147,53 @@ body {
     }
 }
 
+
+.home {
+    &.active {
+        color: var(--accent-color);
+    }
+
+    &-style {
+        --app-content-background-color: #c0d8ec;
+    }
+}
+
+.products {
+    &.active {
+        color: #690c0c;
+    }
+
+    &-style {
+        --app-content-background-color: #d36e5a;
+    }
+}
+
+.services {
+    &.active {
+        color: #cf5c0f;
+    }
+
+    &-style {
+        --app-content-background-color: #ed9426;
+    }
+}
+
+.about {
+    &.active {
+        color: #4dd146;
+    }
+
+    &-style {
+        --app-content-background-color: #4dd146;
+    }
+}
+
+.help {
+    &.active {
+        color: #783896;
+    }
+
+    &-style {
+        --app-content-background-color: #a3a3a3;
+    }
+}
