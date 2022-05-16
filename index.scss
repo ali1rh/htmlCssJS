@@ -186,33 +186,10 @@ body {
             width: 60px;
             height: 60px;
             border: 10px solid var(--app-content-background-color);
-            // background-color: var(--app-content-background-color);
             top: -3rem;
-            transition: left 0.4s ease-in, background-color 0.4s, border-color 0.4s;
+            transition: left .2s ease-in, background-color 0.4s, border-color 0.4s;
 
-            &:before,
-            &:after {
-                content: " ";
-                position: absolute;
-                top: 27px;
-                right: -27px;
-                border-top: 11px solid var(--app-content-background-color);
-                background-color: #f9f8fa;
-                width: 20px;
-                height: 20px;
-                box-sizing: border-box;
-                transition: border-color 0.4s;
-            }
 
-            &::after {
-                border-top-left-radius: 100%;
-            }
-
-            &:before {
-                left: -27px;
-                right: unset;
-                border-top-right-radius: 100%;
-            }
         }
 
         &:nth-child(1).active~.follow {
@@ -242,7 +219,7 @@ body {
         height: 60px;
         top: -2rem;
         border-radius: 100%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 }
 

@@ -1,40 +1,29 @@
+const ul = document.querySelectorAll("#navBottom")[0];
+const lis = ul.querySelectorAll("li");
 
 
-const uls = document.querySelectorAll("ul");
 
-uls.forEach((ul) => {
-  const resetClass = ul.parentNode.getAttribute("class");
-  const lis = ul.querySelectorAll("li");
+lis.forEach((li) => {
+  li.addEventListener("click", (e) => {
+    // e.preventDefault();
+    const target = e.currentTarget;
+    console.log('e.currentTarget: ', e.currentTarget);
 
-  lis.forEach((li) => {
-    li.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const target = e.currentTarget;
 
-      if (
-        target.classList.contains("active") ||
-        target.classList.contains("follow")
-      ) {
-        return;
-      }
 
-      ul.parentNode.setAttribute(
-        "class",
-        `${resetClass} ${target.getAttribute("data-where")}-style`
-      );
+    if (
+      target.classList.contains("follow")
+    ) {
+      return;
+    }
 
-      lis.forEach((item) => clearClass(item, "active"));
 
-      setClass(target, "active");
-    });
+    // remove All active
+    lis.forEach((item) => item.classList.remove("active"));
+
+
+    ul.parentNode.classList.add(`${target.classList}-style`);
+    /// add active to target
+    target.classList.add("active");
   });
 });
-
-function clearClass(node, className) {
-  node.classList.remove(className);
-}
-
-function setClass(node, className) {
-  node.classList.add(className);
-}
