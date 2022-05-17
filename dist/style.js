@@ -19,11 +19,12 @@ function initCards(card, index) {
 
 initCards();
 
-allCards.forEach(function (el) {
-  var hammertime = new Hammer(el);
+allCards.forEach((cardElement) => {
+  var hammertime = new Hammer(cardElement);
 
   hammertime.on('pan', function (event) {
-    el.classList.add('moving');
+    console.log(event);
+    cardElement.classList.add('moving');
   });
 
   hammertime.on('pan', function (event) {
@@ -41,7 +42,7 @@ allCards.forEach(function (el) {
   });
 
   hammertime.on('panend', function (event) {
-    el.classList.remove('moving');
+    cardElement.classList.remove('moving');
     tinderContainer.classList.remove('tinder_love');
     tinderContainer.classList.remove('tinder_nope');
 
