@@ -164,6 +164,7 @@ body, html {
 }
 
 .moving.tinder--card {
+  filter: grayscale(80%);
   transition: none;
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;

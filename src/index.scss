@@ -193,6 +193,8 @@ body, html {
 
 
 .moving.tinder--card {
+  // filter: blur(10px);
+  filter: grayscale(80%);
   transition: none;
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
