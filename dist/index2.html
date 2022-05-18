@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="out.css">
+    <title>htmlCssJS</title>
+</head>
+
+
+</head>
+
+<body>
+
+
+    <style>
+        #myElement {
+            background: silver;
+            height: 300px;
+            text-align: center;
+            font: 30px/300px Helvetica, Arial, sans-serif;
+        }
+    </style>
+
+    <div id="myElement"></div>
+
+
+
+
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        var myElement = document.getElementById('myElement');
+
+        // create a simple instance
+        // by default, it only adds horizontal recognizers
+        var mc = new Hammer(myElement);
+
+        
+        // listen to events...
+        mc.on("panleft panright panup pandown tap press", function (ev) {
+            console.log(ev)
+            myElement.textContent = ev.type + " gesture detected.";
+        });
+    </script>
+</body>
+
+</html>
