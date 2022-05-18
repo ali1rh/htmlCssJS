@@ -27,16 +27,16 @@ allCards.forEach((cardElement) => {
 
   hammertime.on('pan', (event) => {
     // console.log('event: ', event);
-    // console.log('event.deltaX: ', event.deltaX);
-    // console.log('event.deltaY: ', event.deltaY);
-    // console.log('event.center: ', event.center);
+    console.log('event.deltaX: ', event.deltaX);
+    console.log('event.deltaY: ', event.deltaY);
+    console.log('event.center: ', event.center);
 
     cardElement.classList.add('moving');
 
 
 
   });
-  hammertime.on('panleft panmove panright', (event) => {
+  hammertime.on('pan', (event) => {
     // if (event.deltaX === 0) return;
     // if (event.center.x === 0 && event.center.y === 0) return;
 
@@ -66,6 +66,8 @@ allCards.forEach((cardElement) => {
 
 
     var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
+    // var keep = Math.abs(event.deltaX) < 80;
+
     console.log('event.velocityX: ', event.velocityX);
     console.log('event.deltaX: ', event.deltaX);
 
@@ -107,7 +109,7 @@ function createButtonListener(love) {
   return (event) => {
     var cards = document.querySelectorAll('.tinder--card:not(.removed)');
     var moveOutWidth = document.body.clientWidth * 1.5;
-    var moveOutHeight = document.body.clientHeight * .8;
+    var moveOutHeight = document.body.clientHeight * .3;
 
     // console.log('cards: ', cards);
     
@@ -124,11 +126,11 @@ function createButtonListener(love) {
     
 
     if (love) {
-      console.log('translate(' + moveOutWidth + 'px -' + moveOutHeight +  'px) rotate(-30deg)');
-      card.style.transform = 'translate(' + moveOutWidth + 'px -' + moveOutHeight +  'px) rotate(-30deg)';
+
+      card.style.transform = 'translate(' + moveOutWidth + 'px, ' + moveOutHeight +  'px) rotate(30deg)';
     } else {
-      console.log('translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)');
-      card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+
+      card.style.transform = 'translate(-' + moveOutWidth + 'px, ' + moveOutHeight +  'px) rotate(-30deg)';
     }
 
     initCards();
