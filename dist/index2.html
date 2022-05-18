@@ -7,6 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="out.css">
     <title>htmlCssJS</title>
+
+    <style>
+        body, html{
+            background-color: gray;
+            height: 100%;
+        }
+        .test {
+            background-color: plum;
+            width: 80vw;
+            height: 100% ;
+            position: fixed;
+
+        }
+        #inner{
+            background-color: khaki;
+            height: 1080px;
+        }
+    </style>
+
+
 </head>
 
 
@@ -15,17 +35,9 @@
 <body>
 
 
-    <style>
-        #myElement {
-            background: silver;
-            height: 300px;
-            text-align: center;
-            font: 30px/300px Helvetica, Arial, sans-serif;
-        }
-    </style>
+    <div class="test">sdaf</div>
 
-    <div id="myElement"></div>
-
+    <h1 id="inner">alireza</h1>
 
 
 
@@ -33,17 +45,62 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
-        var myElement = document.getElementById('myElement');
+        $(document).ready(() => {
+            $("#inner").html(
 
-        // create a simple instance
-        // by default, it only adds horizontal recognizers
-        var mc = new Hammer(myElement);
+                "window.innerHeight: " + window.innerHeight +
+                "<br>" +
+                "window.innerWidth: " + window.innerWidth +
+                "<br>" +
+                "window.outerHeight: " + window.outerHeight +
+                "<br>" +
+                "window.outerWidth: " + window.outerWidth
+            )
+        });
+        $(document).ready(function () {
+            var div = $('.test');
+            var width = div.width(); // 200 px
+            var innerWidth = div.innerWidth(); // 200px
+            var outerWidth = div.outerWidth(); // 200px
 
-        
-        // listen to events...
-        mc.on("panleft panright panup pandown tap press", function (ev) {
-            console.log(ev)
-            myElement.textContent = ev.type + " gesture detected.";
+            var height = div.height(); // 150 px
+            var innerHeight = div.innerHeight(); // 150 px
+            var outerHeight = div.outerHeight(); // 150 px
+
+            var clientWidth =  document.body.clientWidth;
+            var clientHeight =  document.body.clientHeight;
+
+            $(".test").html(
+                "width: " + width +
+                "<br>" +
+                "innerWidth: " + innerWidth +
+                "<br>" +
+                "outerWidth: " + outerWidth +
+                "<br>" +
+                "&&&&&&&&&&" +
+                "<br>" +
+                "height: " + height +
+                "<br>" +
+                "innerHeight: " + innerHeight +
+                "<br>" +
+                "outerHeight: " + outerHeight +
+                "<br>" +
+                "&&&&&&&&&&" +
+                "<br>" +
+                "clientWidth: " + clientWidth +
+                "<br>" +
+                "clientHeight: " + clientHeight +
+                "<br>" +
+                "&&&&&&&&&&" +
+                "<br>" +
+                "window.innerHeight: " + window.innerHeight +
+                "<br>" +
+                "window.innerWidth: " + window.innerWidth +
+                "<br>" +
+                "window.outerHeight: " + window.outerHeight +
+                "<br>" +
+                "window.outerWidth: " + window.outerWidth
+            )
         });
     </script>
 </body>

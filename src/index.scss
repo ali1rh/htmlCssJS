@@ -8,15 +8,17 @@
   margin: 0;
 }
 
-body {
+body, html {
+  height: 100%;
   background: gray;
   // overflow: hidden;
   // font-family: sans-serif;
 }
 
 .tinder {
+  position: fixed;
   width: 100vw;
-  height: calc(100vh);
+  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -108,9 +110,11 @@ body {
     font-size: 32px;
     vertical-align: middle;
   }
+
   &--buttons button:focus {
     outline: 0;
   }
+
   &--buttons button {
     border-radius: 50%;
     line-height: 60px;
@@ -121,6 +125,7 @@ body {
     display: inline-block;
     margin: 0 8px;
   }
+
   &--buttons {
     flex: 0 0 100px;
     text-align: center;
