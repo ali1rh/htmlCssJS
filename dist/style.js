@@ -24,6 +24,7 @@ initCards();
 
 allCards.forEach((cardElement) => {
   var hammertime = new Hammer(cardElement);
+    hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 
   hammertime.on('pan', (event) => {
     // console.log('event: ', event);
